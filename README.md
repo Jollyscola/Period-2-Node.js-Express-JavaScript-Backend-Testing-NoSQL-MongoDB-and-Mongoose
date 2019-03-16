@@ -15,5 +15,24 @@
 
 ---
 
+PROS
+•	Man kan lave en hurtig response network application, hvis det er gjort rigtigt. 
+•	Tillader at sende filer hurtigt igennem datastreaming og hurtige filoverførsler (file uploads). 
+•	Det er nemt at opsætte en REST-API med Express application generator som et brugerdefineret standardprojekt, Express. 
+•	Command 
+First install express -g
+Express –view=pug navnpåProjektet
+
+Så er man hurtigt i gang. 
+
+•	Det er effektivt at håndtere tusindvis af samtidige anmodninger (for eksempel-en chat applikation). 
+•	Det er meget simpelt at implementere server middleware, der vil blive udført imellem alle request (hvis requerment er tilladt).
+
+CONS
+•	Java er god til at håndtere CPU-tunge opgaver, Node.JS + Express er ikke. Fordi Node er, på trods af sin asynkronhændelsesmodel, af natur enkelttrådet. Når du starter en Node-proces, kører du en enkelt proces med en enkelt tråd på en enkelt kerne. Så din kode vil ikke blive udført parallelt, kun I/O-operationer er parallelle, fordi de udføres asynkronisk. Som sådan vil langvarige CPU-opgaver blokere hele serveren og er som regel en dårlig ide.
+•	Java integrerer godt med relations databaser som MySQL som arbejder ned tabeller. Node.JS + Express gør ikke, da de har mongoDB, fordi mongoDB er et NoSQL database som arbejder med dokumenter og kan nødvendigvis ikke relateres til hinanden.
+•	Java modsat Node.JS + Express er et ” stronly typed language”, der giver en vis sikkerhed.
+•	500 fejl i Node.JS og Express vil nedbryde (crash) hele applikationen men i Java vil dette ikke ske.
+
 
 ![billede](https://user-images.githubusercontent.com/32638165/54477713-7ae1c500-480a-11e9-8db1-2903cef2859d.png)
