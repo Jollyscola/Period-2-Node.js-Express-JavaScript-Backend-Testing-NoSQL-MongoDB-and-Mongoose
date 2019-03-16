@@ -19,11 +19,22 @@ PROS
 •	Man kan lave en hurtig response network application, hvis det er gjort rigtigt. 
 •	Tillader at sende filer hurtigt igennem datastreaming og hurtige filoverførsler (file uploads). 
 •	Det er nemt at opsætte en REST-API med Express application generator som et brugerdefineret standardprojekt, Express. 
-•	Command 
-First install express -g
-Express –view=pug navnpåProjektet
 
-Så er man hurtigt i gang. 
+
+Først install node.js https://nodejs.org/en/
+bagefter install.
+https://expressjs.com/en/starter/installing.html her guide 
+```
+npm install express -g
+```
+hvad navn på expres projektet skal hedde.
+```
+express Navnpåprojektet
+cd Navnpåprojeket
+npm install
+npm start 
+```
+Så er man hurtigt i gang med express projekt. 
 
 •	Det er effektivt at håndtere tusindvis af samtidige anmodninger (for eksempel-en chat applikation). 
 •	Det er meget simpelt at implementere server middleware, der vil blive udført imellem alle request (hvis requerment er tilladt).
