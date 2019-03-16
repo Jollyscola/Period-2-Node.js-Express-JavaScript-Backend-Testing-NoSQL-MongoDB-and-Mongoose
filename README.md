@@ -4,7 +4,9 @@
 ---
 
 • Det er nemt og hurtigt, at opbygge og opsætte et arbejdsnetværksprogram (a working network application) med node.js og den rigtige editor.
+
 • Det er meget praktisk, at du kan bruge det samme sprog både i front-end og i back-end.
+
 • Der kræves ikke meget kode for, at en applikation kan køre.
 
 
