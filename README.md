@@ -30,7 +30,7 @@ npm install express -g
 hvad navn på expres projektet skal hedde.
 ```
 express Navnpåprojektet
-cd Navnpåprojeket
+cd Navnpåprojektet
 npm install
 npm start 
 ```
@@ -44,6 +44,12 @@ CONS
 •	Java integrerer godt med relations databaser som MySQL som arbejder ned tabeller. Node.JS + Express gør ikke, da de har mongoDB, fordi mongoDB er et NoSQL database som arbejder med dokumenter og kan nødvendigvis ikke relateres til hinanden.
 •	Java modsat Node.JS + Express er et ” stronly typed language”, der giver en vis sikkerhed.
 •	500 fejl i Node.JS og Express vil nedbryde (crash) hele applikationen men i Java vil dette ikke ske.
+
+---
+## Node.js uses a Single Threaded Non-blocking strategy to handle asynchronous task. Explain strategies to implement a Node.js based server architecture that still could take advantage of a multi-core Server.
+---
+
+
 
 
 ![billede](https://user-images.githubusercontent.com/32638165/54477713-7ae1c500-480a-11e9-8db1-2903cef2859d.png)
