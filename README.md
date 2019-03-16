@@ -15,7 +15,7 @@
 
 ---
 
-PROS
+### PROS
 •	Man kan lave en hurtig response network application, hvis det er gjort rigtigt. 
 
 •	Tillader at sende filer hurtigt igennem datastreaming og hurtige filoverførsler (file uploads). 
@@ -42,7 +42,8 @@ Så er man hurtigt i gang med express projekt.
 
 •	Det er meget simpelt at implementere server middleware, der vil blive udført imellem alle request (hvis requerment er tilladt).
 
-CONS
+### CONS
+
 •	Java er god til at håndtere CPU-tunge opgaver, Node.JS + Express er ikke. Fordi Node er, på trods af sin asynkronhændelsesmodel, af 
 natur enkelttrådet. Når du starter en Node-proces, kører du en enkelt proces med en enkelt tråd på en enkelt kerne. Så din kode vil ikke blive udført parallelt, kun I/O-operationer er parallelle, fordi de udføres asynkronisk. Som sådan vil langvarige CPU-opgaver blokere hele serveren og er som regel en dårlig ide.
 
