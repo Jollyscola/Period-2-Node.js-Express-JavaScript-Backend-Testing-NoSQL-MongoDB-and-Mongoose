@@ -132,3 +132,51 @@ I flowet tager vi udgangspunkt i en Chat, hvor der er 4 personer som skriver til
 ---
 
 
+# NoSQL, MongoDB and Mongoose
+
+---
+## 16. Explain, generally, what is meant by a NoSQL database.
+---
+
+---
+## 17. Explain Pros & Cons in using a NoSQL database like MongoDB as your data store, compared to a traditional Relational SQL Database like MySQL.
+---
+
+---
+## 18. Explain reasons to add a layer like Mongoose, on top on of a schema-less database like MongoDB
+---
+
+---
+## 19. These two topics will be introduced in period-3
+---
+
+### •	Explain about indexes in MongoDB, how to create them, and demonstrate how you have used them.
+
+### •	Explain, using your own code examples, how you have used some of MongoDB's "special" indexes like TTL and 2dsphere
+
+
+---
+## 20. Demonstrate, using a REST-API you have designed, how to perform all CRUD operations on a MongoDB
+---
+
+---
+## 21. Explain the benefits of using Mongoose, and demonstrate, using your own code, an example involving all CRUD operations
+---
+
+---
+## 22. Explain the “6 Rules of Thumb: Your Guide Through the Rainbow” as to how and when you would use normalization vs. denormalization.
+---
+
+---
+## 23. Demonstrate, using your own code-samples, decisions you have made regarding → normalization vs denormalization 
+---
+
+---
+## 24. Explain, using a relevant example, a full JavaScript backend including relevant test cases to test the REST-API (not on the production database)
+---
+
+
+
+
+
+
