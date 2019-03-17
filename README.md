@@ -154,41 +154,35 @@ Request was made ::1
 HTTP er stateles og har ungen rettigheder. For at forbinde en request til en anden request, har du brug for en måde at gemme userens/brugerens data mellem HTTP request’s. Cookies ag URL parametre er begge egnede måder at transportere data mellem klienten og serveren. De er både læsbare og på the client siden. Du tildeler the client et ID og alle fremtidige request vil bruge dette ID. Informationer tilknyttet the client gemmes på serveren, der knyttes til dette ID.
 
 
-##### App
+Når man install express-
+
+```
+npm install express-session
+```
+
+##### Session
+
 ```javascript
-...
+var express = require('express');
 var session = require('express-session');
-...
 
+var app = express();
 
-app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 20000 }}))
-app.use("/session",sessions);
+app.use(session({secret: "Shh, its a secret!"}));
 
+app.get('/', function(req, res){
+   if(req.session.page_views){
+      req.session.page_views++;
+      res.send("You visited this page " + req.session.page_views + " times");
+   } else {
+      req.session.page_views = 1;
+      res.send("Welcome to this page for the first time!");
+   }
+});
+app.listen(3000);
 ```
-
-##### Session 
-```javascript
-router.get("/",function(req, res, next) {
-  var sess = req.session
-  var name= req.query.name;
-  if(typeof name !=="undefined"){
-    //sess.name =  name.length > 10 ? name.substr(0,name.length-1): name;
-    sess.name =  name;
-    res.redirect("/session")
-    return;
-  }
-  res.setHeader('Content-Type', 'text/html');
-  if (sess.name) {
-    sess.views++
-    res.write('<p>views: ' + sess.views + '</p>');
-    res.write('<p>Hi1: ' + sess.name + '</p> <br/>');
-    res.end('<p>expires in: ' + (sess.cookie.maxAge / 1000) + 's</p>');
-  } else {
-    sess.views = 1
-    res.end('<form ><input placeholder="Enter Your Name:" name="name" ><input type="submit"></form>');
-  }
-})
-```
+output
+![billede](https://user-images.githubusercontent.com/32638165/54496930-1e0f0900-48f5-11e9-952e-bbdb821a2d66.png)
 
 
 ---
