@@ -57,6 +57,22 @@ natur enkelttrådet. Når du starter en Node-proces, kører du en enkelt proces 
 ## 3. Node.js uses a Single Threaded Non-blocking strategy to handle asynchronous task. Explain strategies to implement a Node.js based server architecture that still could take advantage of a multi-core Server.
 ---
 
+Node. js kommer ikke med mutlithreading ud af boksen, da det er enkelttrådet, men det er muligt at bygge og programmere det selv. 
+
+ 
+
+Som nævnt så eNode.js non-blocking som betyder at alle funktioner (callbacks) er delegeret til et event loop og de er (eller kan være) udført af forskellige tråde i eventloopet og bliver behandlet af Node.js run-time. 
+
+Det kan sammenlignes med er restaurant, hvor en tjener får en ordre fra kunden og giver ordreren videre til overtjeneren, som giver ordren til kokken, som skal udføre ordreren. Når kokken er klar med retten, giver han den til overtjeneren som giver videre til tjeneren, som serverer kunden. På den måde kan overtjeneren håndtere alle tjenerne i stedet for at alle tjenerne venter på kokken. Summa summarum overtjeneren styrer forløbet = som er event-loop.
+
+ 
+
+I flowet tager vi udgangspunkt i en Chat, hvor der er 4 personer som skriver til et blad og her er angivet en rækkefølge for hvornår deres skriv/chat kommer ind. Det betyder at inventloopet håndterer rækkefølgen.
+
+For skalering i hele webserviceen, bør du køre flere Node. js servere på en eller flere maskiner/es, en pr kerne og split anmodning trafik mellem dem. Dette giver fremragende CPU-affinitet og vil skalere gennem næsten lineært med Core Count. Du kan også sætte en Load Balancer foran det. Belastningsjusteringen vil afbalancere belastningen af indkommende anmodninger og dermed opnå en multicore-løsning
+
+For skalering overalt på en webservice, skal du køre flere Node.js-servere på en eller flere maskiner/es, en pr. kerne og dele forespørgselstrafik (request traffic) mellem dem. Dette giver fremragende CPU-affinitet (CPU-affinity) og viljestørrelse gennem næsten lineært med kerneantal. Du kan også lægge en belastningsbalancer foran den. Lastbalanceren vil afbalancere belastningen af indgående forespørgsler og dermed opnå en multicore-løsning
+
 ---
 ## 4. Explain briefly how to deploy a Node/Express application including how to solve the following deployment problems:
 ---
@@ -83,7 +99,37 @@ natur enkelttrådet. Når du starter en Node-proces, kører du en enkelt proces 
 ---
 
 ---
-## Explain, using relevant examples, the Express concept; middleware.
+## 8. Explain, using relevant examples, the Express concept; middleware.
 ---
 
 ![billede](https://user-images.githubusercontent.com/32638165/54477713-7ae1c500-480a-11e9-8db1-2903cef2859d.png)
+
+---
+## 9. Explain, using relevant examples, how to implement sessions and the legal implications of doing this.
+---
+
+---
+## 10. Compare the express strategy toward (server side) templating with the one you used with Java on second semester.
+---
+
+---
+## 11. Demonstrate a simple Server Side Rendering example using a technology of your own choice (pug, EJS, ..).
+---
+
+---
+## 12. Explain, using relevant examples, your strategy for implementing a REST-API with Node/Express and show how you can "test" all the four CRUD operations programmatically using, for example, the Request package.
+---
+
+---
+## 13. Explain, using relevant examples, about testing JavaScript code, relevant packages (Mocha etc.) and how to test asynchronous code.
+---
+
+---
+## 14. Explain, using relevant examples, different ways to mock out databases, HTTP-request etc.
+---
+
+---
+## 15. Explain, preferably using an example, how you have deployed your node/Express applications, and which of the Express Production best practices you have followed.
+---
+
+
