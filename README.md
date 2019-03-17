@@ -29,7 +29,7 @@ https://expressjs.com/en/starter/installing.html her guide
 ```
 npm install express -g
 ```
-Hvad navn skal hedder på expres projektet.
+Sådan start man expres projektet op.
 ```
 express Navnpåprojektet
 cd Navnpåprojektet
