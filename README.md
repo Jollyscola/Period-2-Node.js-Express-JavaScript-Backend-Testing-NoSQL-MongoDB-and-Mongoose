@@ -151,9 +151,52 @@ Request was made ::1
 ## 9. Explain, using relevant examples, how to implement sessions and the legal implications of doing this.
 ---
 
+HTTP er stateles og har ungen rettigheder. For at forbinde en request til en anden request, har du brug for en måde at gemme userens/brugerens data mellem HTTP request’s. Cookies ag URL parametre er begge egnede måder at transportere data mellem klienten og serveren. De er både læsbare og på the client siden. Du tildeler the client et ID og alle fremtidige request vil bruge dette ID. Informationer tilknyttet the client gemmes på serveren, der knyttes til dette ID.
+
+
+##### App
+```javascript
+...
+var session = require('express-session');
+...
+
+
+app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 20000 }}))
+app.use("/session",sessions);
+
+```
+
+##### Session 
+```javascript
+router.get("/",function(req, res, next) {
+  var sess = req.session
+  var name= req.query.name;
+  if(typeof name !=="undefined"){
+    //sess.name =  name.length > 10 ? name.substr(0,name.length-1): name;
+    sess.name =  name;
+    res.redirect("/session")
+    return;
+  }
+  res.setHeader('Content-Type', 'text/html');
+  if (sess.name) {
+    sess.views++
+    res.write('<p>views: ' + sess.views + '</p>');
+    res.write('<p>Hi1: ' + sess.name + '</p> <br/>');
+    res.end('<p>expires in: ' + (sess.cookie.maxAge / 1000) + 's</p>');
+  } else {
+    sess.views = 1
+    res.end('<form ><input placeholder="Enter Your Name:" name="name" ><input type="submit"></form>');
+  }
+})
+```
+
+
 ---
 ## 10. Compare the express strategy toward (server side) templating with the one you used with Java on second semester.
 ---
+
+
+
 
 ---
 ## 11. Demonstrate a simple Server Side Rendering example using a technology of your own choice (pug, EJS, ..).
