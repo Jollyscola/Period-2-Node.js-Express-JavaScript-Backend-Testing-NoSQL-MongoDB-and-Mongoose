@@ -107,7 +107,23 @@ For skalering i hele webserviceen, bør du køre flere Node. js servere på en e
 ## 8. Explain, using relevant examples, the Express concept; middleware.
 ---
 
-![billede](https://user-images.githubusercontent.com/32638165/54477713-7ae1c500-480a-11e9-8db1-2903cef2859d.png)
+En Express-applikation er i det væsentlige en stak middleware, der udføres i en pipeline/rækkefølge (serially). En middleware er en funktion med adgang til request object (reg), responsobjektet (res) og den næste middleware i rækken i the request-response cycle af en Express application.
+
+Hver middleware har evnen til at udføre koder, foretage ændringer i request og the response object, afslutte the request-response cycle, og kalde det næste middleware i stakken. Da middleware udføres serielt (serially), er deres rækkefølge af inddragelse vigtig.
+
+Hvis det nuværende middleware ikke afslutter the request-response cyklussen, er det vigtigt at kalde next() for at videregive kontrollen til næste middleware ellers vil the request forblive hængende.
+
+Request Flow jf. som skitseret nedenfor: 
+
+
+ 
+Middleware: http://expressjs.com/en/guide/using-middleware.html 
+ 
+I en Express Application er der et enkelt single-entry point for alle requests, der kommer til the app - via app.js. Når en HTTP-request (anmodning) ankommer til vores app, går den igennem stakken af middleware.
+
+
+
+
 ``` javascript
 const express = require('express')
 const app = express()
