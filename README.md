@@ -26,9 +26,9 @@
 
 •	Det er meget simpelt at implementere server middleware, der vil blive udført imellem alle request (hvis requerment er tilladt).
 
-En lille guide til express projekt 
+#### En lille guide til express projekt 
 
-Først install man node.js https://nodejs.org/en/bagefter.
+Først install man node.js https://nodejs.org/en/ bagefter.
 
 ```
 npm install express -g
@@ -40,22 +40,7 @@ cd Navnpåprojektet
 npm install
 npm start 
 ```
-og til sidst skrive det i din browser localhost:3000/
-
-![Exprestfirstformit](https://user-images.githubusercontent.com/32638165/54492293-7af2cb00-48c5-11e9-9c6e-f84190c09ef5.JPG)
-
-Så er man hurtigt i gang med express projekt. 
-```
-npm install express -g
-```
-Sådan start man expres projektet op.
-```
-express Navnpåprojektet
-cd Navnpåprojektet
-npm install
-npm start 
-```
-og til sidst skrive det i din browser localhost:3000/
+og til sidst skrive det i din browser "localhost:3000/"
 
 ![Exprestfirstformit](https://user-images.githubusercontent.com/32638165/54492293-7af2cb00-48c5-11e9-9c6e-f84190c09ef5.JPG)
 
