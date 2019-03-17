@@ -238,8 +238,9 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
 ```
 
 Example 2 (Retrieving a session variable on the front end with Handlebars)
+
 Node.js + Express.js:
-```javscript 
+```javascript 
 <h1>{{title}}</h1>
 <h2>{{subtitle}}</h2>
 ```
