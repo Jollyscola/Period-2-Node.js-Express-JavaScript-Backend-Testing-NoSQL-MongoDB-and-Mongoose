@@ -196,13 +196,6 @@ Node.JS og Express bruger ”templating engines” som ”Handlebars”, Jade og
 Example 1 (Passing variables to a view in Express)
 Node.js + Express.js:
 
-
-
-
----
-## 11. Demonstrate a simple Server Side Rendering example using a technology of your own choice (pug, EJS, ..).
----
-
 Node.JS og Express bruger ”templating engines” som ”Handlebars”, Jade og EJS. Java bruger ”templating engines” som JSP. Java blev aldrig lavet til at være egnet til web-applikationer og JSP ses ofte som en provisorisk løsning.
 
 •	Java: Model --> Controller --> Servlet --> JSP
@@ -249,6 +242,9 @@ Java + JSP
 <h1><%= session.getAttribute("title"); %></h1>
 <h2><%= session.getAttribute("subtitle"); %></h2>
 ```
+---
+## 11. Demonstrate a simple Server Side Rendering example using a technology of your own choice (pug, EJS, ..).
+---
 
 ---
 ## 12. Explain, using relevant examples, your strategy for implementing a REST-API with Node/Express and show how you can "test" all the four CRUD operations programmatically using, for example, the Request package.
