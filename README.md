@@ -36,6 +36,9 @@ cd Navnpåprojektet
 npm install
 npm start 
 ```
+og til sidst skrive det i din browser localhost:3000
+
+
 Så er man hurtigt i gang med express projekt. 
 
 •	Det er effektivt at håndtere tusindvis af samtidige anmodninger (for eksempel-en chat applikation). 
