@@ -59,13 +59,14 @@ natur enkelttrådet. Når du starter en Node-proces, kører du en enkelt proces 
 
 Node. js kommer ikke med mutlithreading ud af boksen, da det er enkelttrådet, men det er muligt at bygge og programmere det selv. 
 
- 
+![billede](https://user-images.githubusercontent.com/32638165/54491851-ecc91580-48c1-11e9-84a2-91aae826ce78.png)
+
 
 Som nævnt så eNode.js non-blocking som betyder at alle funktioner (callbacks) er delegeret til et event loop og de er (eller kan være) udført af forskellige tråde i eventloopet og bliver behandlet af Node.js run-time. 
 
 Det kan sammenlignes med er restaurant, hvor en tjener får en ordre fra kunden og giver ordreren videre til overtjeneren, som giver ordren til kokken, som skal udføre ordreren. Når kokken er klar med retten, giver han den til overtjeneren som giver videre til tjeneren, som serverer kunden. På den måde kan overtjeneren håndtere alle tjenerne i stedet for at alle tjenerne venter på kokken. Summa summarum overtjeneren styrer forløbet = som er event-loop.
 
- 
+![billede](https://user-images.githubusercontent.com/32638165/54491854-f5215080-48c1-11e9-890a-a3b7a788fafb.png) 
 
 I flowet tager vi udgangspunkt i en Chat, hvor der er 4 personer som skriver til et blad og her er angivet en rækkefølge for hvornår deres skriv/chat kommer ind. Det betyder at inventloopet håndterer rækkefølgen.
 
