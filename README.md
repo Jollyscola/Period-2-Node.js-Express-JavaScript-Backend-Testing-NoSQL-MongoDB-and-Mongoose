@@ -69,10 +69,10 @@ Det kan sammenlignes med er restaurant, hvor en tjener får en ordre fra kunden 
 
 I flowet tager vi udgangspunkt i en Chat, hvor der er 4 personer som skriver til et blad og her er angivet en rækkefølge for hvornår deres skriv/chat kommer ind. Det betyder at inventloopet håndterer rækkefølgen.
 
-**For skalering i hele webserviceen, bør du køre flere Node. js servere på en eller flere maskiner/es, en pr kerne og split anmodning trafik mellem dem. Dette giver fremragende CPU-affinitet og vil skalere gennem næsten lineært med Core Count. Du kan også sætte en Load Balancer foran det. Belastningsjusteringen vil afbalancere belastningen af indkommende anmodninger og dermed opnå en multicore-løsning
-
-**For skalering overalt på en webservice, skal du køre flere Node.js-servere på en eller flere maskiner/es, en pr. kerne og dele forespørgselstrafik (request traffic) mellem dem. Dette giver fremragende CPU-affinitet (CPU-affinity) og viljestørrelse gennem næsten lineært med kerneantal. Du kan også lægge en belastningsbalancer foran den. Lastbalanceren vil afbalancere belastningen af indgående forespørgsler og dermed opnå en multicore-løsning
-
+*For skalering i hele webserviceen, bør du køre flere Node. js servere på en eller flere maskiner/es, en pr kerne og split anmodning trafik mellem dem. Dette giver fremragende CPU-affinitet og vil skalere gennem næsten lineært med Core Count. Du kan også sætte en Load Balancer foran det. Belastningsjusteringen vil afbalancere belastningen af indkommende anmodninger og dermed opnå en multicore-løsning
+*
+*For skalering overalt på en webservice, skal du køre flere Node.js-servere på en eller flere maskiner/es, en pr. kerne og dele forespørgselstrafik (request traffic) mellem dem. Dette giver fremragende CPU-affinitet (CPU-affinity) og viljestørrelse gennem næsten lineært med kerneantal. Du kan også lægge en belastningsbalancer foran den. Lastbalanceren vil afbalancere belastningen af indgående forespørgsler og dermed opnå en multicore-løsning
+*
 ---
 ## 4. Explain briefly how to deploy a Node/Express application including how to solve the following deployment problems:
 ---
