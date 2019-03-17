@@ -1,6 +1,6 @@
 # Period-2-Node.js-Express-JavaScript-Backend-Testing-NoSQL-MongoDB-and-Mongoose
 ---
-## Why would you consider a Scripting Language as JavaScript as your Backend Platform?
+## 1. Why would you consider a Scripting Language as JavaScript as your Backend Platform?
 ---
 
 • Det er nemt og hurtigt, at opbygge og opsætte et arbejdsnetværksprogram (a working network application) med node.js og den rigtige editor.
@@ -11,7 +11,7 @@
 
 
 ---
-## Explain Pros & Cons in using Node.js + Express to implement your Backend compared to a strategy using, for example, Java/JAX-RS/Tomcat
+## 2. Explain Pros & Cons in using Node.js + Express to implement your Backend compared to a strategy using, for example, Java/JAX-RS/Tomcat
 
 ---
 
@@ -54,10 +54,36 @@ natur enkelttrådet. Når du starter en Node-proces, kører du en enkelt proces 
 •	500 fejl i Node.JS og Express vil nedbryde (crash) hele applikationen men i Java vil dette ikke ske.
 
 ---
-## Node.js uses a Single Threaded Non-blocking strategy to handle asynchronous task. Explain strategies to implement a Node.js based server architecture that still could take advantage of a multi-core Server.
+## 3. Node.js uses a Single Threaded Non-blocking strategy to handle asynchronous task. Explain strategies to implement a Node.js based server architecture that still could take advantage of a multi-core Server.
 ---
 
+---
+## 4. Explain briefly how to deploy a Node/Express application including how to solve the following deployment problems:
+---
+
+## - Ensure that you Node-process restarts after a (potential) exception that closed the application
+
+## - Ensure that you Node-process restarts after a server (Ubuntu) restart
+
+## - Ensure that you can take advantage of a multi-core system
+
+## - Ensure that you can run “many” node-applications on a single droplet on the same port (80)
 
 
+---
+## 5. Explain the difference between “Debug outputs” and application logging. What’s wrong with console.log(..) statements in our backend-code.
+---
+
+---
+## 6. Demonstrate a system using application logging and “coloured” debug statements.
+---
+
+---
+## 7. Explain, using relevant examples, concepts related to testing a REST-API using Node/JavaScript + relevant packages 
+---
+
+---
+## Explain, using relevant examples, the Express concept; middleware.
+---
 
 ![billede](https://user-images.githubusercontent.com/32638165/54477713-7ae1c500-480a-11e9-8db1-2903cef2859d.png)
