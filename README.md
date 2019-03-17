@@ -189,13 +189,6 @@ Output
 ## 10. Compare the express strategy toward (server side) templating with the one you used with Java on second semester.
 ---
 
-
-Node.JS og Express bruger ”templating engines” som ”Handlebars”, Jade og EJS. Java bruger ”templating engines” som JSP. Java blev aldrig lavet til at være egnet til web-applikationer og JSP ses ofte som en provisorisk løsning.
-•	Java: Model --> Controller --> Servlet --> JSP
-•	Express.js: Model --> Controller/Router --> Handlebars/Jade/EJS
-Example 1 (Passing variables to a view in Express)
-Node.js + Express.js:
-
 Node.JS og Express bruger ”templating engines” som ”Handlebars”, Jade og EJS. Java bruger ”templating engines” som JSP. Java blev aldrig lavet til at være egnet til web-applikationer og JSP ses ofte som en provisorisk løsning.
 
 •	Java: Model --> Controller --> Servlet --> JSP
