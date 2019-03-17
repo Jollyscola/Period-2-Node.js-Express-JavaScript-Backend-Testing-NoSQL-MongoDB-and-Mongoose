@@ -115,14 +115,14 @@ Hvis det nuværende middleware ikke afslutter the request-response cyklussen, er
 
 Request Flow jf. som skitseret nedenfor: 
 
+![billede](https://user-images.githubusercontent.com/32638165/54493147-d4122d00-48cc-11e9-8605-53f0a0cf9ce4.png)
 
- 
-Middleware: http://expressjs.com/en/guide/using-middleware.html 
+#### Middleware: http://expressjs.com/en/guide/using-middleware.html 
  
 I en Express Application er der et enkelt single-entry point for alle requests, der kommer til the app - via app.js. Når en HTTP-request (anmodning) ankommer til vores app, går den igennem stakken af middleware.
 
 
-
+Eksempel: 
 
 ``` javascript
 const express = require('express')
@@ -140,6 +140,13 @@ app.get('/', function (req, res) {
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 ```
+
+Output
+```
+Example app listening on port 3002!
+Request was made ::1
+```
+
 ---
 ## 9. Explain, using relevant examples, how to implement sessions and the legal implications of doing this.
 ---
