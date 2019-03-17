@@ -28,8 +28,9 @@
 
 #### En lille guide til express projekt 
 
-Først install man node.js https://nodejs.org/en/ bagefter.
+Først install man node.js https://nodejs.org/en/
 
+Bagefter.
 ```
 npm install express -g
 ```
