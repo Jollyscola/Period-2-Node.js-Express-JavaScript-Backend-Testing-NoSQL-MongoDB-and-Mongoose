@@ -30,10 +30,11 @@
 
 Først install man node.js https://nodejs.org/en/
 
-Bagefter.
+Bagefter i sin terminal skrive man denne kommentar. 
 ```
 npm install express -g
 ```
+
 Sådan start man expres projektet op.
 ```
 express Navnpåprojektet
