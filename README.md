@@ -153,8 +153,7 @@ Request was made ::1
 
 HTTP er stateles og har ungen rettigheder. For at forbinde en request til en anden request, har du brug for en måde at gemme userens/brugerens data mellem HTTP request’s. Cookies ag URL parametre er begge egnede måder at transportere data mellem klienten og serveren. De er både læsbare og på the client siden. Du tildeler the client et ID og alle fremtidige request vil bruge dette ID. Informationer tilknyttet the client gemmes på serveren, der knyttes til dette ID.
 
-
-Når man install express-
+Install express-session gør at man kan køre denne pakke.
 
 ```
 npm install express-session
@@ -181,7 +180,7 @@ app.get('/', function(req, res){
 });
 app.listen(3000);
 ```
-output
+Output
 
 ![billede](https://user-images.githubusercontent.com/32638165/54496930-1e0f0900-48f5-11e9-952e-bbdb821a2d66.png)
 
@@ -191,11 +190,64 @@ output
 ---
 
 
+Node.JS og Express bruger ”templating engines” som ”Handlebars”, Jade og EJS. Java bruger ”templating engines” som JSP. Java blev aldrig lavet til at være egnet til web-applikationer og JSP ses ofte som en provisorisk løsning.
+•	Java: Model --> Controller --> Servlet --> JSP
+•	Express.js: Model --> Controller/Router --> Handlebars/Jade/EJS
+Example 1 (Passing variables to a view in Express)
+Node.js + Express.js:
+
+
 
 
 ---
 ## 11. Demonstrate a simple Server Side Rendering example using a technology of your own choice (pug, EJS, ..).
 ---
+
+Node.JS og Express bruger ”templating engines” som ”Handlebars”, Jade og EJS. Java bruger ”templating engines” som JSP. Java blev aldrig lavet til at være egnet til web-applikationer og JSP ses ofte som en provisorisk løsning.
+
+•	Java: Model --> Controller --> Servlet --> JSP
+•	Express.js: Model --> Controller/Router --> Handlebars/Jade/EJS
+
+Example 1 (Passing variables to a view in Express)
+Node.js + Express.js:
+
+```javascript
+router.get('/dashboard', isLoggedIn, function (req, res) {
+    res.render('dashboard', {
+        title: 'Dashboard',
+        subtitle: 'Hello dashboard'
+    });
+});
+```
+
+Java + JSP
+
+```java
+protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        RequestDispatcher rd = null;
+        HttpSession session = request.getSession();
+        session.setMaxInactiveInterval(30 * 60);
+
+        session.setAttribute("title", "Dashboard");
+        session.setAttribute("subtitle", "Hello dashboard");
+        rd = request.getRequestDispatcher("dashboard.jsp");
+        rd.forward(request, response);
+
+}
+```
+
+Example 2 (Retrieving a session variable on the front end with Handlebars)
+Node.js + Express.js:
+```javscript 
+<h1>{{title}}</h1>
+<h2>{{subtitle}}</h2>
+```
+Java + JSP
+```java
+<h1><%= session.getAttribute("title"); %></h1>
+<h2><%= session.getAttribute("subtitle"); %></h2>
+```
 
 ---
 ## 12. Explain, using relevant examples, your strategy for implementing a REST-API with Node/Express and show how you can "test" all the four CRUD operations programmatically using, for example, the Request package.
