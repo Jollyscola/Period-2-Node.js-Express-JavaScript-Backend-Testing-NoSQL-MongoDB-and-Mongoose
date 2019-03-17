@@ -108,7 +108,22 @@ For skalering i hele webserviceen, bør du køre flere Node. js servere på en e
 ---
 
 ![billede](https://user-images.githubusercontent.com/32638165/54477713-7ae1c500-480a-11e9-8db1-2903cef2859d.png)
+``` javascript
+const express = require('express')
+const app = express()
+const port = 3002
 
+app.use("/", function (req, res, next) {
+    console.log("Request was made " + req.ip);
+    next();
+});
+
+app.get('/', function (req, res) {
+    res.send('Hello World!')
+});
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+```
 ---
 ## 9. Explain, using relevant examples, how to implement sessions and the legal implications of doing this.
 ---
