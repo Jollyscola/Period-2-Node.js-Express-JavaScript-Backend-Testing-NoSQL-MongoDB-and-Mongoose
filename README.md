@@ -273,6 +273,13 @@ Pros & Cons – Sammenligning af MySQL og MongoDB (NoSQL Database)
 |Open source|Yes|Yes|Yes|
 |ACID Transactions|Yes|Yes|No|
 |Fleksibel avanceret datamodel (Flexible, rich data model)|No|Yes| Partial: schema flexibility but support for only simple data structures|
+|Skemastyring( Schema governance)|Yes|Yes|No|
+|Expressive joins, faceted search, graphs queries, powerful aggregations|Yes|Yes|No|
+|Idiomatic, native language drivers|No|Yes|No|
+|Horizontal scale-out with data locality controls|No|Yes|Partial: no controls over data locality|
+|Analytics and BI ready|Yes|Yes|No|
+|Enterprise grade security and mature management tools|Yes|Yes|No|
+|Database as a service on all major clouds|Yes|Yes|No|
 
 
 
