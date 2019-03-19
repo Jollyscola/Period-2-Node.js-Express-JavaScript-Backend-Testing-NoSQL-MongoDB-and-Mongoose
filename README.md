@@ -3,11 +3,16 @@
 ## 1. Why would you consider a Scripting Language as JavaScript as your Backend Platform?
 ---
 
-• Det er nemt og hurtigt, at opbygge og opsætte et arbejdsnetværksprogram (a working network application) med node.js og den rigtige editor.
+Grunden til at Node.js er rigtigt godt er, fordi de udvikler og hjælper til at løse problemer for dem der programmerer. 
+JavaScript er et rigtigt godt værktøj for serveren, med følgende grunde:
 
-• Det er meget praktisk, at du kan bruge det samme sprog både i front-end og i back-end.
+•	Det er nemt og hurtigt, at opbygge og opsætte et arbejdsnetværksprogram (a working network application) med node.js og den rigtige editor.
 
-• Der kræves ikke meget kode for, at en applikation kan køre.
+•	Det er meget praktisk, at du kan bruge det samme sprog både i front-end og i back-end.
+
+•	Der kræves ikke meget kode for, at en applikation kan køre.
+
+Der er flere back-end sprog men JavaScript er helt sikkert et sprog man skal overveje at bruge som virksomhed.
 
 
 ---
