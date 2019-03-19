@@ -274,23 +274,7 @@ Java + JSP
 ## 17. Explain Pros & Cons in using a NoSQL database like MongoDB as your data store, compared to a traditional Relational SQL Database like MySQL.
 ---
 
-NoSQL vs. SQL Summary
 
-|Tekst|SQL databases|NoSQL databases|
-|-----|-------------|---------------|
-| Types|One type (SQL database) with minor variations|Mange forskellige typer, herunder key-value stores, document databases, wide-column stores, and graph databases.|
-| Development History|Udviklet i 1970s. Beskæftige sig med (to deal with) den første bølge af datalagring applikationer.|Udviklet i slutningen af 2000'erne for at håndtere begrænsninger af SQL-databaser, især skalerbarhed, multistruktureret data, geo-distribution og fleksibel udvikling sprints (agile development sprints).|
-| Examples|MySQL, Postgres, Microsoft SQL Server, Oracle Database|MongoDB, Cassandra, HBase, Neo4j|
-| Data Storage Model|Individuelle optegnelser (eks. "medarbejdere") lagres som rækker i tabeller, hvor hver kolonne lagrer et bestemt stykke data om den pågældende post (eks. ' Manager ', ' date ansat ' osv.) ligesom i et regneark. Relaterede data gemmes i separate tabeller og sammenføjes, når der udføres mere komplekse forespørgsler. (eks. kan ' kontorer ' lagres i én tabel og ' medarbejdere ' i en anden). Når en bruger ønsker at finde arbejdsadressen for en medarbejder, sammensætter database-”engine” tabellerne "medarbejder" og "kontor" for at få alle de nødvendige oplysninger. Struktur og datatyper fastsættes på forhånd. Hvis du vil gemme oplysninger om et nyt dataelement, skal hele databasen ændres, og i dette tidsrum skal databasen tages offline.|Varierer afhængigt af databasetype. For eksempel fungerer nøgleværdi lagre på samme måde som SQL-databaser, men har kun to kolonner (' nøgle ' og ' værdi ') med mere komplekse oplysninger, der sommetider gemmes som BLOBs i kolonnerne ' value '.I dokumentdatabaser fjernes tabel-og række modellen helt, og alle relevante data lagres samlet i et enkelt dokument i JSON, XML eller et andet format, som kan indlejre værdier hierarkisk.|
-| Skemaer (Schemas)| Struktur og datatyper fastsættes på forhånd. Hvis du vil gemme oplysninger om et nyt dataelement, skal hele databasen ændres, og i dette tidsrum skal databasen tages offline| Typisk dynamisk med nogle håndhævende regler for datavalidering. Applikationer/ programmer kan tilføje nye felter i farten, og i modsætning til SQL-tabelrækker kan forskellige data lagres sammen efter behov. For nogle databaser (eks. store kolonne databaser/wide column stores), er det noget mere udfordrende at tilføje nye felter dynamisk.|
-| Scaling|Vertikalt, hvilket betyder en enkelt server skal gøres mere stærk (powerful) for at håndtere øget efterspørgsel. Det er muligt at sprede SQL-databaser over mange servere, men der kræves generelt en betydelig ekstra teknik og kerne relationsmæssige funktioner som JOINs forbindelser, referentiel integrity og transaktioner går typisk tabt.| Horisontalt, hvilket betyder, at en database administrator kan blot - ved at tilføje kapacitet - tilføje flere vare servere (commodity servers) eller cloud-forekomster. Databasen spreder automatisk data på tværs af servere efter behov.|
-| Development Model| Mix af open-source (eks. Postgres, MySQL) og lukket kilde (eks Oracle Database).| Open-source|
-| Supports multi-record ACID transactions| Yes | For det meste nej. MongoDB 4,0 og derudover understøtter multi-dokument ACID transaktioner.|
-| Data Manipulation| Specifikt sprog ved hjælp af Select, INSERT og Update-sætninger f.eks SELECT-felter fra tabel.| Gennem object-oriented APIs|
-| Sammenhæng (Consistency)| Kan konfigureres til stærk konsistens (for strong consistency)| Afhænger af produktet. Nogle giver stærk konsistens (eks., MongoDB, med justerbare konsistens for læsninger/ ”consistency for reads”), mens andre tilbyder eventuel konsistens (eks Cassandra).|
-
-
- 
 
 
 Pros & Cons – Sammenligning af MySQL og MongoDB (NoSQL Database)
