@@ -266,6 +266,10 @@ Java + JSP
 ---
 ## 17. Explain Pros & Cons in using a NoSQL database like MongoDB as your data store, compared to a traditional Relational SQL Database like MySQL.
 ---
+Pros & Cons – Sammenligning af MySQL og MongoDB (NoSQL Database)
+||MySQL|MongoDB|NoSQL Data Store|
+|-------|----|---|---|
+|Open source|Yes|Yes|Yes|
 
 ---
 ## 18. Explain reasons to add a layer like Mongoose, on top on of a schema-less database like MongoDB
