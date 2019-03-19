@@ -274,7 +274,15 @@ Java + JSP
 ## 17. Explain Pros & Cons in using a NoSQL database like MongoDB as your data store, compared to a traditional Relational SQL Database like MySQL.
 ---
 
+Højdepunkter SQK vs NoSQL
 
+|SQL|NoSQL|
+|---|----|
+|RELATIONAL DATABASE MANAGEMENT SYSTEM (RDBMS)|Non-relational or distributed database system.|
+|These databases have fixed or static or predefined schema|They have have dynamic schema|
+|These databases are not suited for hierarchical data storage.|These databases are best suited for hierarchical data storage.|
+|These databases are best suited for complex queries|These databases are not so good for complex queries |
+|Verticlly Scalable|Horizontally scalable|
 
 
 Pros & Cons – Sammenligning af MySQL og MongoDB (NoSQL Database)
