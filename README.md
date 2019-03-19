@@ -266,6 +266,22 @@ Java + JSP
 ---
 ## 17. Explain Pros & Cons in using a NoSQL database like MongoDB as your data store, compared to a traditional Relational SQL Database like MySQL.
 ---
+
+NoSQL vs. SQL Summary
+
+|Tekst|SQL databases|NoSQL databases|
+|-----|-------------|---------------|
+| Types|One type (SQL database) with minor variations|Mange forskellige typer, herunder key-value stores, document databases, wide-column stores, and graph databases.|
+| Development History|Udviklet i 1970s. Beskæftige sig med (to deal with) den første bølge af datalagring applikationer.|Udviklet i slutningen af 2000'erne for at håndtere begrænsninger af SQL-databaser, især skalerbarhed, multistruktureret data, geo-distribution og fleksibel udvikling sprints (agile development sprints).|
+| Examples|MySQL, Postgres, Microsoft SQL Server, Oracle Database|MongoDB, Cassandra, HBase, Neo4j|
+| Data Storage Model|Individuelle optegnelser (eks. "medarbejdere") lagres som rækker i tabeller, hvor hver kolonne lagrer et bestemt stykke data om den pågældende post (eks. ' Manager ', ' date ansat ' osv.) ligesom i et regneark. Relaterede data gemmes i separate tabeller og sammenføjes, når der udføres mere komplekse forespørgsler. (eks. kan ' kontorer ' lagres i én tabel og ' medarbejdere ' i en anden). 
+Når en bruger ønsker at finde arbejdsadressen for en medarbejder, sammensætter database-”engine” tabellerne "medarbejder" og "kontor" for at få alle de nødvendige oplysninger. 
+Struktur og datatyper fastsættes på forhånd. Hvis du vil gemme oplysninger om et nyt dataelement, skal hele databasen ændres, og i dette tidsrum skal databasen tages offline.|Varierer afhængigt af databasetype. For eksempel fungerer nøgleværdi lagre på samme måde som SQL-databaser, men har kun to kolonner (' nøgle ' og ' værdi ') med mere komplekse oplysninger, der sommetider gemmes som BLOBs i kolonnerne ' value '.
+I dokumentdatabaser fjernes tabel-og række modellen helt, og alle relevante data lagres samlet i et enkelt dokument i JSON, XML eller et andet format, som kan indlejre værdier hierarkisk.|
+|
+ 
+
+
 Pros & Cons – Sammenligning af MySQL og MongoDB (NoSQL Database)
 
 |Tekst |MySQL|MongoDB|NoSQL Data Store|
