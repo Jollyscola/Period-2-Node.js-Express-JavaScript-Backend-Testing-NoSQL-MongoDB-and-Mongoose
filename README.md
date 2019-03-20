@@ -140,35 +140,36 @@ module.exports = router;
 ```
 
 Her se man hvordan programmeringen af index.js side 
-```
-1 (function ( -exports, require, module, __filename, __dirname) { var express = require('express');
+
+```javascript
+1 (function ( "exports", require, module, __filename, __dirname) { var express = require('express');
   2 var router = express.Router();
   3
 debug> n
-> 1 (function (exports, require, module, __filename, __dirname) { var express = **require**('express');
-  2 var router = express.**Router()**;
+> 1 (function (exports, require, module, __filename, __dirname) { var express = "require"('express');
+  2 var router = express.Router();
   3
 debug> n
   1 (function (exports, require, module, __filename, __dirname) { var express = require('express');
-> 2 var router = express.Router();
+> 2 var router = express."Router()";
   3
   4
 debug> n
   3
   4
-> 5 var model = **{**
+> 5 var model = "{"
   6   title: "Site with a simple JOKE API",
   7   howToUse: "Get a random joke like this: /api/random"
 debug> n
   9 }
  10 /* GET home page. */
->11 router.**get**('/', function(req, res, next) {
+>11 router."get"('/', function(req, res, next) {
  12   res.render('index', { title: model.howToUse });
  13 });
 debug> n
  13 });
  14
->15 **module**.exports = router;
+>15 "module".exports = router;
  16
  17 });
 ```
