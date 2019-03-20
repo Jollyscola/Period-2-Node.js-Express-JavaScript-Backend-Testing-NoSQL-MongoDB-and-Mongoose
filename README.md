@@ -140,7 +140,7 @@ module.exports = router;
 ```
 
 Her se man hvordan programmeringen af index.js side 
-
+```
 1 (function (**exports**, require, module, __filename, __dirname) { var express = require('express');
   2 var router = express.Router();
   3
@@ -171,6 +171,7 @@ debug> n
 >15 **module**.exports = router;
  16
  17 });
+```
 
 n betyder "next" command 
 
