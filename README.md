@@ -106,7 +106,7 @@ For skalering i hele webserviceen, bør du køre flere Node. js servere på en e
 ## 6. Demonstrate a system using application logging and “coloured” debug statements.
 ---
 
-Igennem debug statements er det vigtigt man kigge på hvad der sker i udvikling af indholdet i forløb
+Igennem debug statements er det vigtigt man kigger på, hvad der sker i udviklingen af indholdet i forløbet
 
 Ved at install det her.
 
@@ -173,16 +173,38 @@ debug> n
  16
  17 });
 ```
+n betyder "next" command. 
 
-n betyder "next" command 
 
-
-Hvis man f.eks debug den her side start den med det her: 
 
 
 ---
 ## 7. Explain, using relevant examples, concepts related to testing a REST-API using Node/JavaScript + relevant packages 
 ---
+
+Man kan teste ens kode ved mocha og bruge chai, expert til at tjekket om resultet er korret.
+
+```javascript
+describe("test af et api", function () {
+    before(function (done) {
+        apicalcualtor.calcualtorapi(PORT, function (server) {
+            serverapi = server;
+            done();
+        });
+    });
+    it("8 + 4 = 12", async function () {
+        const resurl = await fetch(`${URL}/add/8/4`)
+        .then(r => r.text());
+        result = Number(resurl);
+
+        expect(result).to.be.equal(12);
+    });
+    after(function () {
+        serverapi.close();
+    });
+});
+
+```
 
 ---
 ## 8. Explain, using relevant examples, the Express concept; middleware.
