@@ -401,6 +401,68 @@ Java + JSP
 ## 13. Explain, using relevant examples, about testing JavaScript code, relevant packages (Mocha etc.) and how to test asynchronous code.
 ---
 
+Mocha er en test struktur, der kører på node.js og kan bruges til at teste synkrone og asynkrone funktioner. Mocha tests kører serielt og giver mulighed for fleksibel og præcis rapportering, mens kortlægning af ufangede undtagelser til de korrekte test tilfælde. -> "describe" + "it".
+
+Chai er en BDD/TDD (Behavior-/Test-Driven Development) påstand (assertion) bibliotek for node og browseren, der kan parres med enhver JavaScript test Framework. -> "should" + "expect" + "assert". request: Anmodning (request) er designet til at være den enkleste måde at foretage http-opkald (calls). Det understøtter HTTPS og følger omdirigeringer som standard.
+
+
+```javascript 
+//var expect = require("chai").expect;
+const {expect} = require("chai"); //es6 way of doing it
+
+describe("Testing async behaviour", function () {
+    var foo = false;
+    before(function (done) { //done callback
+        setTimeout(function () {
+            foo = true
+            done(); // test fails without this
+        }, 1000);
+    });
+
+    it("should pass (with done called)", function () {
+        expect(foo).to.equal(true);
+    })
+})
+```
+Testing the indexOf method on an array with 3 values:
+```javascript
+var assert = require('chai').assert;
+describe('Array', function() {
+  describe('#indexOf()', function () {
+    it('should return -1 when the value is not present', function () {
+      assert.equal(-1, [1,2,3].indexOf(5));
+      assert.equal(-1, [1,2,3].indexOf(0));
+    });
+  });
+});
+
+```
+Working with hooks:
+With its default “BDD”-style interface, Mocha provides the hooks before(), after(), beforeEach(), and afterEach(). These should be used to set up preconditions and clean up after your tests.
+
+```javascript
+describe('hooks', function() {
+
+  before(function() {
+    // runs before all tests in this block
+  });
+
+  after(function() {
+    // runs after all tests in this block
+  });
+
+  beforeEach(function() {
+    // runs before each test in this block
+  });
+
+  afterEach(function() {
+    // runs after each test in this block
+  });
+
+  // test cases
+});
+```
+
 ---
 ## 14. Explain, using relevant examples, different ways to mock out databases, HTTP-request etc.
 ---
