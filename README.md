@@ -533,6 +533,28 @@ Pros & Cons – Sammenligning af MySQL og MongoDB (NoSQL Database)
 ## 18. Explain reasons to add a layer like Mongoose, on top on of a schema-less database like MongoDB
 ---
 
+Mongoose er et objekt dokument modellering (ODM) lag, der sidder på toppen af Node's MongoDB driver. Hvis du kommer fra SQL, svarer det til en ORM for en relationsdatabase. Selv om det ikke er nødvendigt at bruge Mongoose med Mongo, er her fire grunde til at bruge Mongoose med MongoDB: 
+
+1.	Skemaer (Schemas) 
+MongoDB er en ”de-normaliseret NoSQL” database. Dette gør det (i sagens natur), at det som dokument er skema-løs med varierende sæt af felter med forskellige datatyper. Selvom dette giver din datamodel fleksibilitet, når den udvikler sig over tid, kan det være svært at håndtere med en SQL-baggrund. Mongoose definerer et skema til dine datamodeller, så dine dokumenter følger en specifik struktur med foruddefinerede datatyper. 
+
+2.	Validering (Validation) 
+Mongoose har indbygget validering for skema definitioner. Dette sparer dig for at skrive en masse valideringskoder, som du ellers skulle skrive med MongoDB-driveren. Ved blot at inkludere ting som ”required: true” i dine skemadefinitioner, giver Mongoose out-of-the-box valideringer for dine samlinger (herunder datatyper). 
+
+3.	Instansmetoder (Instance Methods)
+Mongoose tilbyder valgfri præ- og post-save-operationer til datamodeller. Dette gør det nemt at definere kroge og brugerdefineret funktionalitet på vellykket læsning/skrivning osv. Man kan også definere brugerdefinerede metoder, der virker på en bestemt instans/forekomst (eller et dokument). Mens du kan opnå lignende funktionalitet med den indfødte MongoDB-driver, gør Mongoose det nemmere at definere og organisere sådanne metoder i din skemadefinition.
+
+4.	Tilbagevendende resultater (Returning results)
+Mongoose gør det lettere at returnere opdaterede dokumenter eller søge resultater. Et godt eksempel kan findes med opdateringsforespørgsler. Mens den indbyggede/oprindelige driver returnerer et objekt med et succesflag og antallet af ændrede dokumenter, returnerer Mongoose selve det opdaterede objekt, så du nemt kan arbejde med resultaterne.
+
+Grunde til ikke at bruge Mongoose?
+Der er få grunde til ikke at bruge Mongoose med MongoDB (især hvis du lige er begyndt). For mere avancerede forespørgsler, kan det hævdes, at Mongoose gør tingene vanskeligere og kan bremse ydeevnen. Fortalere for den MongoDB-driver hævder desuden, at den bringer ODM til et de-normaliseret design, og derved helt forkaster formålet med en NoSQL-database.
+
+
+Konklusion
+På trods af argumenterne mod at bruge Mongoose forbliver det et af de mest populære ODM-værktøjer til Mongo. Hvis du kommer fra en SQL-baggrund, så bruger Mongoose overgangen til et NoSQL-miljø meget lettere. Det vil også spare dig tid til at skrive egne valideringer og instansmetoder og anbefales stærkt til mindre DB'er og grundlæggende Mongo-operationer.
+
+
 ---
 ## 19. These two topics will be introduced in period-3
 ---
@@ -553,6 +575,21 @@ Pros & Cons – Sammenligning af MySQL og MongoDB (NoSQL Database)
 ---
 ## 22. Explain the “6 Rules of Thumb: Your Guide Through the Rainbow” as to how and when you would use normalization vs. denormalization.
 ---
+
+Tommelfingerregler: din guide gennem regnbuen.
+Her er nogle "tommelfinger regler" til at guide dig gennem disse ”in-denumberable” (men ikke uendelige) valg:
+
+1.	én: favor indlejring, medmindre der er en tvingende grund til ikke at. 
+
+2.	to: behov for at få adgang til et objekt på egen hånd er en overbevisende grund til ikke at indlejre det.
+
+3.	tre: arrays bør ikke vokse uden bundet. Hvis der er mere end et par hundrede dokumenter på "mange" side, ikke indlejre dem; Hvis der er mere end et par tusinde dokumenter på "mange"-siden, skal du ikke bruge en matrix af ObjectID-referencer. Arrays med høj kardinalitet er en tvingende grund til ikke at indlejre. 
+
+4.	Fire: du skal ikke være bange for joinforbindelser på programniveau: Hvis du indekserer korrekt og bruger projektionsangivelsen (som vist i del 2), er joinforbindelser på programniveau næppe dyrere end server side- join-forbindelser i en relations database. 
+
+5.	Fem: Overvej skrive/læse forholdet, når denormaliceing. Et felt, der for det meste vil blive læst og kun sjældent opdateret er en god kandidat til denormalisering: Hvis du demoraliser et felt, der opdateres ofte så det ekstra arbejde med at finde og opdatere alle forekomster er tilbøjelige til at overvælde de besparelser, du får fra denormaliserende. 
+
+6.	Seks: som altid med MongoDB, hvordan du modellerer dine data afhænger – helt – på din særlige applikationsdata adgangs mønstre. Du vil strukturere dine data, så de passer til de måder, som dit program forespørger på og opdaterer det.
 
 ---
 ## 23. Demonstrate, using your own code-samples, decisions you have made regarding → normalization vs denormalization 
