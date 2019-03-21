@@ -93,9 +93,11 @@ For skalering i hele webserviceen, bør du køre flere Node. js servere på en e
 
 I produktionen, må applikationen ikke på noget tidspunkt være offline. Det betyder, at du skal sørge for, at den genstarter både, hvis appen går ned, og hvis serveren selv går ned. Forhåbningsvis vil ingen af disse begivenhederne forekomme, ellers skal du tage højde for begge eventualiteter, ved følgende:
 
-­	Ved hjælp af en ”Process Manager” som genstarter app’en (og node), når den går ned.
-­	Ved hjælp af init system, leveret af dit operativsystem til at genstarte ”Process Manager”, når OS går ned. 
-­	Det er også muligt at bruge init-systemet uden en ”Proces Manager”. Node applikationen går ned, hvis den støder på en uopdaget undtagelse. 
+•	Ved hjælp af en ”Process Manager” som genstarter app’en (og node), når den går ned.
+
+• Ved hjælp af init system, leveret af dit operativsystem til at genstarte ”Process Manager”, når OS går ned. 
+
+•	Det er også muligt at bruge init-systemet uden en ”Proces Manager”. Node applikationen går ned, hvis den støder på en uopdaget undtagelse. 
 
 Det er vigtigt at sikre, at app’en er velafprøvet og håndterer alle undtagelser. Men som en sikkerhed mod fejl, skal der sættes en mekanisme ind for at sikre, at hvis og når din app går ned, vil den automatisk genstarte.
 
