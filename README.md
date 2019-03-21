@@ -478,6 +478,21 @@ describe('hooks', function() {
 ## 16. Explain, generally, what is meant by a NoSQL database.
 ---
 
+
+NoSQL er et udtryk, der refererer til en bestemt type databasemodel eller database management system (DBMS). NoSQL er et meget bredt begreb, der ikke refererer til en bestemt databasemodel. Det refererer snarere til en lang række forskellige modeller, der ikke passer ind i relationsmodellen.
+NoSQL database er en mekanisme til lagring og hentning af data, der er modelleret på andre måder end de tabelrelationer, der anvendes i relationelle databaser (relational databases). NoSQL databaser anvendes i stigende grad ved store datamængder og i realtid web-applikationer. 
+NoSQL omfatter en bred vifte af forskellige database teknologier, der blev udviklet som svar på de krav, der præsenteres i opbygningen af moderne applikationer: 
+
+•	Udviklere arbejder med applikationer, der skaber massive mængder af nye, hurtigt skiftende data typer — strukturerede, semistrukturerede, ustrukturerede og polymorfe data.
+
+•	”Long gone” er den tolv-til-atten måneders vandfald udvikling cyklus. Nu arbejder små teams i agile sprints, itererating hurtigt og skubber kode hver uge eller to, nogle endda flere gange hver dag. 
+
+•	Applikationer, der engang tjente et endeligt publikum, leveres nu som tjenester, der altid skal være tilgængelige fra mange forskellige enheder og skaleres globalt til millioner af brugere.
+
+•	Organisationer henvender sig nu til skaleringsbaserede arkitekturer ved hjælp af open source-software, commodity servere og cloud-computing i stedet for store monolitiske servere og storage-infrastruktur. 
+
+Relationelle databaser var ikke designet til at klare den skala og agility udfordringer, man står over for i moderne applikationer. De var heller ikke bygget til at drage fordel af den ”commodity servers” og ”processing power” som er til rådighed i dag. 
+
 ---
 ## 17. Explain Pros & Cons in using a NoSQL database like MongoDB as your data store, compared to a traditional Relational SQL Database like MySQL.
 ---
