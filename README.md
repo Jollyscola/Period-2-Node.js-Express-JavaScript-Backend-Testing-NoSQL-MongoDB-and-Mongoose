@@ -91,12 +91,60 @@ For skalering i hele webserviceen, bør du køre flere Node. js servere på en e
 
 ## - Ensure that you Node-process restarts after a (potential) exception that closed the application
 
+I produktionen, må applikationen ikke på noget tidspunkt være offline. Det betyder, at du skal sørge for, at den genstarter både, hvis appen går ned, og hvis serveren selv går ned. Forhåbningsvis vil ingen af disse begivenhederne forekomme, ellers skal du tage højde for begge eventualiteter, ved følgende:
+
+­	Ved hjælp af en ”Process Manager” som genstarter app’en (og node), når den går ned.
+­	Ved hjælp af init system, leveret af dit operativsystem til at genstarte ”Process Manager”, når OS går ned. 
+­	Det er også muligt at bruge init-systemet uden en ”Proces Manager”. Node applikationen går ned, hvis den støder på en uopdaget undtagelse. 
+
+Det er vigtigt at sikre, at app’en er velafprøvet og håndterer alle undtagelser. Men som en sikkerhed mod fejl, skal der sættes en mekanisme ind for at sikre, at hvis og når din app går ned, vil den automatisk genstarte.
+
 ## - Ensure that you Node-process restarts after a server (Ubuntu) restart
+
+
+Det næste er at sikre, at din app genstarter, når serveren genstarter. Systemer kan stadig gå ned af forskellige årsager. For at sikre, at din app genstarter, hvis serveren går ned, skal du bruge init-systemet indbygget i dit operativsystem (OS). De to vigtigste init-systemer i brug i dag er ”systemd” og ”Upstart”. 
+
+Der er to måder at bruge init-systemer med din Express-app: 
+
+1.	Kør din app i en proces manager og installer process manager som en tjeneste med init-systemet. Process manager’en vil restarte app’en, når app’en krakker og init-systemet vil restart den process manager, når OS restarter. Dette er den anbefalede fremgangsmåde. 
+
+2.	Kør din app (og node) direkte med init-systemet. Dette er noget enklere, men du får ikke de yderligere fordele, som man får ved at bruge en process manager.
 
 ## - Ensure that you can take advantage of a multi-core system
 
+En enkelt forekomst af Node.js kører i en enkelt tråd. For at drage fordel af multi-core-systemer, vil brugeren nogle gange ønske, at lancere en klynge af Node.js processer til at håndtere belastningen. Klynge modulet (The cluster module) gør det nemt at oprette underordnede processer, som alle deler server porte
+
+exemple: 
+
+```javascript
+const cluster = require('cluster')
+const http = require('http')
+const numCPUs = require('os').cpus().length;
+if (cluster.isMaster) {
+console.log(`Master ${process.pid} is running`);
+// Fork workers.
+for (let i = 0; i < numCPUs; i++) {
+cluster.fork()
+}
+cluster.on('exit', (worker, code, signal) => {
+console.log(`worker ${worker.process.pid} died`)
+})
+} else {
+// Workers can share any TCP connection
+// In this case it is an HTTP server
+http.createServer((req, res) => {
+res.writeHead(200)
+res.end('hello world\n')
+}).listen(8000)
+console.log(`Worker ${process.pid} started`)
+}
+```
+
+
 ## - Ensure that you can run “many” node-applications on a single droplet on the same port (80)
 
+Dette kan opnås ved at implementere en ”reversy proxy” dvs. Nginx Ref: hosting flere apps på, ref.: 
+Hosting Multiple Apps on the same Server — Implement a Reverse Proxy with Node
 
 ---
 ## 5. Explain the difference between “Debug outputs” and application logging. What’s wrong with console.log(..) statements in our backend-code.
